@@ -1,0 +1,13 @@
+FINAL PRACTICE:
+nothing new, all in the other practices but mixed
+new repository (see the exact name in github)
+the basic level must work perfect to go to medium or advanced
+VERY IMPORTANT to have finished all the practices P0-P7 and have more than 6 weeks of activity on github
+
+BASIC LEVEL:
+HTML error
+
+To prove: Test report (very important)
+
+BIG MISTAKES:
+server cant crash while using normal services (MARK LESS TO 3)
