@@ -1,6 +1,7 @@
 import http.server
 import termcolor
 import socketserver
+import requests
 
 # Server's port
 PORT = 8000
@@ -15,7 +16,29 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
 
         if self.path == '/' or self.path == '/main.html':
             f = open("main.html", "r")
-            contents = f.read()
+            contents1 = f.read()
             f.close()
+
+        elif self.path.startswith("/listSpecies"):
+            HOSTNAME = "rest.ensembl.org"
+            ENDPOINT = "/info/species?"
+            r1 = requests.get(HOSTNAME + ENDPOINT, headers={"Content-Type": "application/json"})
+            s = r1.json()
+            species = s['species']
+
+            if self.path.startswith("/listSpecies?limit="):
+                msg = msg.split("=")
+
+
+        elif self.path.startswith("/karyotype"):
+            fff = open("karyotype.html", "r")
+            contents2 = fff.read()
+            fff.close()
+
+            if self.path.startswith("/karyotype?specie="):
+                HOSTNAME = "rest.ensembl.org"
+                ENDPOINT = 
+
+
 
 
