@@ -1,3 +1,5 @@
+# Alba Gomez de la Flor
+
 import http.server
 import termcolor
 import socketserver
@@ -22,9 +24,9 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
         elif self.path.startswith("/listSpecies"):
             HOSTNAME = "rest.ensembl.org"
             ENDPOINT = "/info/species?"
-            r1 = requests.get(HOSTNAME + ENDPOINT, headers={"Content-Type": "application/json"})
-            s = r1.json()
-            species = s['species']
+            r1 = requests.get(HOSTNAME + ENDPOINT, headers = {"Content-Type": "application/json"})
+            s1 = r1.json()
+            species = s1['species']
 
             if self.path.startswith("/listSpecies?limit="):
                 msg = msg.split("=")
@@ -37,7 +39,15 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
 
             if self.path.startswith("/karyotype?specie="):
                 HOSTNAME = "rest.ensembl.org"
-                ENDPOINT = 
+                ENDPOINT = "/info/species?"
+                r2 = requests.get(HOSTNAME + ENDPOINT, headers = {"Content-Type": "application/json"})
+                s2 = r2.json()
+                species = s2['species']
+                for i in species:
+                    species2 = [i]
+
+
+
 
 
 
