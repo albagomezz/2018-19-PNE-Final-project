@@ -23,7 +23,7 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
 
         elif self.path.startswith("/listSpecies"):
             HOSTNAME = "rest.ensembl.org"
-            ENDPOINT = "/info/species?"
+            ENDPOINT = "/info/species?content-type=application/json"
             METHOD = "GET"
 
             # Connect to the server
@@ -61,16 +61,15 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
 
             if self.path.startswith("/listSpecies?limit="):
                 message = self.path.split("=")
-                number_species = 0
                 f3 = open("listSpecies.html", "r")
                 cont = f3.read()
                 f3.close()
-
+                limit = message[1]
+                number_species = 0
                 for i in species:
                     cont = cont + '<p>' + i['name'] + '<p>'
                 number_species = number_species + 1
-
-                if str(number_species) == message[1]:
+                if str(number_species) == limit:
                     print("NOT VALID")
 
         elif self.path.startswith("/karyotype"):
@@ -80,8 +79,10 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
 
             if self.path.startswith("/karyotype?specie="):
                 message = self.path.split("=")
+                specie = message[1]
                 HOSTNAME = "rest.ensembl.org"
-                ENDPOINT = "/info/assembly/{}?".format(message[1])
+                ENDPOINT = "/info/assembly/"
+                ENDPOINT2 = "?content-type=application/json"
                 METHOD = "GET"
 
                 # Connect to the server
@@ -91,7 +92,7 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
 
                 # Send the request. No body (None)
                 # Use the defined headers
-                conn.request(METHOD, ENDPOINT, None, headers)
+                conn.request(METHOD, ENDPOINT + specie + ENDPOINT2, None, headers)
 
                 # Wait for the server's response
                 r2 = conn.getresponse()
@@ -108,11 +109,11 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
 
                 # Generate the object from the json file
                 s2 = json.loads(text_json)
-                karyotype = s2['species']
+                karyotype = s2['karyotype']
                 f5 = open("karyotype.html", "r")
                 cont = f5.read()
                 f5.close()
-
+                cont = cont + "You have chosen " + specie + ": "
                 for i in karyotype:
                     cont = cont + i + " "
 
