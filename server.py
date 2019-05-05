@@ -167,12 +167,13 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
                     f7.close()
                 cont = cont + "Chromosome " + chromosome + " from " + specie + ". Its length is: " + str(length)
 
-        else:
-            f7 = open('error.html', 'r')
-            cont = f7.read()
-            f7.close()
 
-        self.send_response(200)  # -- Status line: OK!
+        else:
+            f8 = open('error.html', 'r')
+            cont = f8.read()
+            f8.close()
+
+        self.send_response(200)  # Status line: OK!
 
         # Define the content-type header:
         self.send_header("Content-Type", "text/html\r\n")
@@ -186,17 +187,17 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
         return
 
 # ------------------------
-# - Server MAIN program
+# Server MAIN program
 # ------------------------
-# -- Set the new handler
+# Set the new handler
 Handler = TestHandler
 
-# -- Open the socket server
+# Open the socket server
 with socketserver.TCPServer(("", PORT), Handler) as httpd:
     print("Serving at PORT", PORT)
 
-    # -- Main loop: Attend the client. Whenever there is a new
-    # -- clint, the handler is called
+    # Main loop: Attend the client. Whenever there is a new
+    # client, the handler is called
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:
