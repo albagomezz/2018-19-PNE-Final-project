@@ -163,13 +163,12 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
                     f7 = open("chromo.html", "r")
                     result_chromo = f7.read()
                     f7.close()
-                    
 
-
-                    = s3['species']
                 f5 = open("karyotype.html", "r")
                 result_karyotype = f5.read()
                 f5.close()
+                result_karyotype = result_karyotype + "Chromosome " + name + " from " + list1[1] + " .Its length is: " + str(length)
+
 
 
 
