@@ -176,93 +176,78 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
             cont = f8.read()
             f8.close()
 
-        elif self.path.startswith("/geneSeq?gene="):
-            message = self.path.split("=")
-            gene = message[1]
+            if self.path.startswith("/geneSeq?gene="):
+                message = self.path.split("=")
+                gene = message[1]
 
-            HOSTNAME = "rest.ensembl.org"
-            ENDPOINT = "/homology/symbol/human/"
-            ENDPOINT2 = "?content-type=application/json"
-            METHOD = "GET"
+                HOSTNAME = "rest.ensembl.org"
+                ENDPOINT = "/lookup/symbol/homo_sapiens/"
+                ENDPOINT2 = "?content-type=application/json"
+                METHOD = "GET"
 
-            # Connect to the server
-            conn = http.client.HTTPSConnection(HOSTNAME)
+                # Connect to the server
+                conn = http.client.HTTPSConnection(HOSTNAME)
 
-            headers = {'User-Agent': 'http-client'}
+                headers = {'User-Agent': 'http-client'}
 
-            # Send the request. No body (None)
-            # Use the defined headers
-            conn.request(METHOD, ENDPOINT + gene + ENDPOINT2, None, headers)
+                # Send the request. No body (None)
+                # Use the defined headers
+                conn.request(METHOD, ENDPOINT + gene + ENDPOINT2, None, headers)
 
-            # Wait for the server's response
-            r4 = conn.getresponse()
+                # Wait for the server's response
+                r4 = conn.getresponse()
 
-            # Print the status
-            print()
-            print("Response received: ", end='')
-            print(r4.status, r4.reason)
+                # Print the status
+                print()
+                print("Response received: ", end='')
+                print(r4.status, r4.reason)
 
-            # Read the response's body and close
-            # the connection
-            text_json = r4.read().decode("utf-8")
-            conn.close()
+                # Read the response's body and close
+                # the connection
+                text_json = r4.read().decode("utf-8")
+                conn.close()
 
-            # Generate the object from the json file
-            s4 = json.loads(text_json)
+                # Generate the object from the json file
+                s4 = json.loads(text_json)
+                info = s4['id']
 
-            for i in s4['data']:
-                info = i['id']
+                HOSTNAME = "rest.ensembl.org"
+                ENDPOINT = "/sequence/id/"
+                ENDPOINT2 = "?content-type=application/json"
+                METHOD = "GET"
 
-            HOSTNAME = "rest.ensembl.org"
-            ENDPOINT = "/sequence/id/"
-            ENDPOINT2 = "?content-type=application/json"
-            METHOD = "GET"
+                # Connect to the server
+                conn = http.client.HTTPSConnection(HOSTNAME)
 
-            # Connect to the server
-            conn = http.client.HTTPSConnection(HOSTNAME)
+                headers = {'User-Agent': 'http-client'}
 
-            headers = {'User-Agent': 'http-client'}
+                # Send the request. No body (None)
+                # Use the defined headers
+                conn.request(METHOD, ENDPOINT + info + ENDPOINT2, None, headers)
 
-            # Send the request. No body (None)
-            # Use the defined headers
-            conn.request(METHOD, ENDPOINT + info + ENDPOINT2, None, headers)
+                # Wait for the server's response
+                r5 = conn.getresponse()
 
-            # Wait for the server's response
-            r5 = conn.getresponse()
+                # Print the status
+                print()
+                print("Response received: ", end='')
+                print(r5.status, r5.reason)
 
-            # Print the status
-            print()
-            print("Response received: ", end='')
-            print(r5.status, r5.reason)
+                # Read the response's body and close
+                # the connection
+                text_json = r5.read().decode("utf-8")
+                conn.close()
 
-            # Read the response's body and close
-            # the connection
-            text_json = r5.read().decode("utf-8")
-            conn.close()
+                # Generate the object from the json file
+                s5 = json.loads(text_json)
+                data = s5['seq']
 
-            # Generate the object from the json file
-            s5 = json.loads(text_json)
-            data = s5['seq']
+                f9 = open("seq.html", "r")
+                cont = f9.read()
+                f9.close()
+                cont = cont + "You have chosen " + gene + " and the sequence is: " + data
 
-            f9 = open("seq.html", "r")
-            cont = f9.read()
-            f9.close()
-            cont = cont + "You have chosen " + info + " and the sequence is: " + data
-
-
-            # Print the status
-            print()
-            print("Response received: ", end='')
-            print(r5.status, r5.reason)
-
-            # Read the response's body and close
-            # the connection
-            text_json = r5.read().decode("utf-8")
-            conn.close()
-
-            # Generate the object from the json file
-            s5 = json.loads(text_json)
-            seq = s5['seq']
+        elif self.path.startswith("/geneInfo"):
 
         else:
             f8 = open('error.html', 'r')

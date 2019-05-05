@@ -1,0 +1,13 @@
+Alba Gomez de la Flor
+FINAL PROJECT: Browsing human and vertebrates genome
+Medium level
+
+ENDPOINTS TESTED:
+1)MAIN PAGE
+Endpoint: "/" , "/main.html" , " "
+
+Response:
+
+
+
+
