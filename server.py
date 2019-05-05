@@ -123,13 +123,15 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
             f6.close()
 
             if self.path.startswith('/chromosomeLength?specie='):
-                message = self.path.split("=")
-                list1 = []
-                for i in message:
-                    list1 = list1 + i.split("&")
+                message = self.path.split("&")
+                msg = message[0].split("=")
+                specie = msg[1]
+                msg1 = message[1].split("=")
+                chromosome = msg1[1]
 
                 HOSTNAME = "rest.ensembl.org"
-                ENDPOINT = "/info/assembly/{}?".format(list1[1])
+                ENDPOINT = "/info/assembly/"
+                ENDPOINT2 = "?content-type=application/json"
                 METHOD = "GET"
 
                 # Connect to the server
@@ -139,7 +141,7 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
 
                 # Send the request. No body (None)
                 # Use the defined headers
-                conn.request(METHOD, ENDPOINT, None, headers)
+                conn.request(METHOD, ENDPOINT + specie + ENDPOINT2, None, headers)
 
                 # Wait for the server's response
                 r3 = conn.getresponse()
@@ -156,15 +158,14 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
 
                 # Generate the object from the json file
                 s3 = json.loads(text_json)
-                name = list1[3]
                 for i in s3['top_level_region']:
-                    if name == i['name']:
+                    if chromosome == i['name']:
                         length = i['length']
 
                     f7 = open("chromo.html", "r")
                     cont = f7.read()
                     f7.close()
-                cont = cont + "Chromosome " + name + " from " + list1[1] + " .Its length is: " + str(length)
+                cont = cont + "Chromosome " + chromosome + " from " + specie + ". Its length is: " + str(length)
 
         else:
             f7 = open('error.html', 'r')
