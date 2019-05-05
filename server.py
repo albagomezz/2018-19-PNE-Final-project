@@ -53,7 +53,7 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
 
             species = s1['species']
 
-            f2 = open("listSpecies.html", "r")
+            f2 = open("list_menu.html", "r")
             cont = f2.read()
             f2.close()
             for i in species:
@@ -62,7 +62,7 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
             if self.path.startswith("/listSpecies?limit="):
                 message = self.path.split("=")
                 number_species = 0
-                f3 = open("listSpecies_limit.html", "r")
+                f3 = open("listSpecies.html", "r")
                 cont = f3.read()
                 f3.close()
 
