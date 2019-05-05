@@ -71,7 +71,7 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
                 number_species = number_species + 1
 
                 if str(number_species) == msg[1]:
-                    break
+                    print("NOT VALID")
 
         elif self.path.startswith("/karyotype"):
             f4 = open("karyotype_menu.html", "r")
