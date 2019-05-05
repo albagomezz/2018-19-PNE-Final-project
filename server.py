@@ -60,17 +60,21 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
                 cont = cont + '<p>' + i['name'] + '<p>'
 
             if self.path.startswith("/listSpecies?limit="):
-                message = self.path.split("=")
+
                 f3 = open("listSpecies.html", "r")
                 cont = f3.read()
                 f3.close()
-                limit = message[1]
-                number_species = 0
+
+                message = self.path.split("=")
+                msg = message[1]
+                msg = int(msg)
+                sp = []
                 for i in species:
-                    cont = cont + '<p>' + i['name'] + '<p>'
-                number_species = number_species + 1
-                if str(number_species) == limit:
-                    print("NOT VALID")
+                    name = i['name']
+                    sp.append(name)
+                lim = sp[:msg]
+                for i in lim:
+                    cont = cont + '<p>' + i + '<p>'
 
         elif self.path.startswith("/karyotype"):
             f4 = open("karyotype_menu.html", "r")

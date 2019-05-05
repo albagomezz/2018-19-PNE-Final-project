@@ -4,7 +4,7 @@ Basic level
 
 ENDPOINTS TESTED:
 1)MAIN PAGE
-Endpoint: "/" , "/main.html"
+Endpoint: "/" , "/main.html" , " "
 
 Response:
 <!DOCTYPE html>
@@ -43,15 +43,22 @@ Response:
     <br><br>
 </form><p>mus_musculus<p><p>homo_sapiens<p><p>cavia_porcellus<p><p>mus_musculus_cbaj<p><p>amphilophus_citrinellus<p><p>anolis_carolinensis<p><p>cebus_capucinus<p><p>labrus_bergylta<p><p>panthera_pardus<p><p>takifugu_rubripes<p><p>rhinopithecus_bieti<p><p>mastacembelus_armatus<p><p>lepidothrix_coronata<p><p>fukomys_damarensis<p><p>monodelphis_domestica<p><p>equus_asinus_asinus<p><p>xiphophorus_maculatus<p><p>apteryx_owenii<p><p>calidris_pugnax<p><p>gasterosteus_aculeatus<p><p>cricetulus_griseus_picr<p><p>mus_spicilegus<p><p>oryzias_melastigma<p><p>nannospalax_galili<p><p>chelonoidis_abingdonii<p><p>acanthochromis_polyacanthus<p><p>scleropages_formosus<p><p>sarcophilus_harrisii<p><p>gallus_gallus<p><p>latimeria_chalumnae<p><p>numida_meleagris<p><p>mus_musculus_aj<p><p>poecilia_latipinna<p><p>phascolarctos_cinereus<p><p>mus_musculus_fvbnj<p><p>cricetulus_griseus_chok1gshd<p><p>mus_musculus_lpj<p><p>heterocephalus_glaber_female<p><p>calidris_pygmaea<p><p>anas_platyrhynchos_platyrhynchos<p><p>saimiri_boliviensis_boliviensis<p><p>lonchura_striata_domestica<p><p>callithrix_jacchus<p><p>ovis_aries<p><p>papio_anubis<p><p>macaca_fascicularis<p><p>notechis_scutatus<p><p>capra_hircus<p><p>fundulus_heteroclitus<p><p>ursus_americanus<p><p>mus_musculus_nzohlltj<p><p>notamacropus_eugenii<p><p>tursiops_truncatus<p><p>gambusia_affinis<p><p>felis_catus<p><p>pan_paniscus<p><p>nomascus_leucogenys<p><p>chlorocebus_sabaeus<p><p>bos_taurus<p><p>amphiprion_ocellaris<p><p>mus_pahari<p><p>coturnix_japonica<p><p>carlito_syrichta<p><p>apteryx_haastii<p><p>macaca_nemestrina<p><p>sphenodon_punctatus<p><p>anser_brachyrhynchus<p><p>anabas_testudineus<p><p>lepisosteus_oculatus<p><p>rhinopithecus_roxellana<p><p>spermophilus_dauricus<p><p>poecilia_formosa<p><p>scophthalmus_maximus<p><p>mus_spretus<p><p>petromyzon_marinus<p><p>xenopus_tropicalis<p><p>gopherus_agassizii<p><p>bison_bison_bison<p><p>mus_musculus_129s1svimj<p><p>ictalurus_punctatus<p><p>octodon_degus<p><p>colobus_angolensis_palliatus<p><p>manacus_vitellinus<p><p>astatotilapia_calliptera<p><p>prolemur_simus<p><p>mus_musculus_wsbeij<p><p>dasypus_novemcinctus<p><p>kryptolebias_marmoratus<p><p>mus_musculus_dba2j<p><p>urocitellus_parryii<p><p>gorilla_gorilla<p><p>microcebus_murinus<p><p>mandrillus_leucophaeus<p><p>pogona_vitticeps<p><p>neovison_vison<p><p>parus_major<p><p>macaca_mulatta<p><p>ornithorhynchus_anatinus<p><p>oryzias_latipes_hni<p><p>eptatretus_burgeri<p><p>canis_lupus_dingo<p><p>danio_rerio<p><p>mus_musculus_nodshiltj<p><p>stegastes_partitus<p><p>chinchilla_lanigera<p><p>mus_musculus_c57bl6nj<p><p>astyanax_mexicanus<p><p>ictidomys_tridecemlineatus<p><p>vicugna_pacos<p><p>crocodylus_porosus<p><p>zonotrichia_albicollis<p><p>amphiprion_percula<p><p>panthera_tigris_altaica<p><p>meleagris_gallopavo<p><p>piliocolobus_tephrosceles<p><p>marmota_marmota_marmota<p><p>serinus_canaria<p><p>apteryx_rowi<p><p>salvator_merianae<p><p>choloepus_hoffmanni<p><p>mus_caroli<p><p>sorex_araneus<p><p>taeniopygia_guttata<p><p>theropithecus_gelada<p><p>hippocampus_comes<p><p>cavia_aperea<p><p>periophthalmus_magnuspinnatus<p><p>aotus_nancymaae<p><p>myotis_lucifugus<p><p>sus_scrofa<p><p>propithecus_coquereli<p><p>drosophila_melanogaster<p><p>pundamilia_nyererei<p><p>echinops_telfairi<p><p>junco_hyemalis<p><p>vulpes_vulpes<p><p>pan_troglodytes<p><p>cricetulus_griseus_crigri<p><p>seriola_dumerili<p><p>erinaceus_europaeus<p><p>loxodonta_africana<p><p>neolamprologus_brichardi<p><p>pelodiscus_sinensis<p><p>microtus_ochrogaster<p><p>mola_mola<p><p>ursus_maritimus<p><p>dromaius_novaehollandiae<p><p>oryctolagus_cuniculus<p><p>xiphophorus_couchianus<p><p>cyprinodon_variegatus<p><p>ciona_intestinalis<p><p>pygocentrus_nattereri<p><p>esox_lucius<p><p>ochotona_princeps<p><p>mustela_putorius_furo<p><p>ciona_savignyi<p><p>meriones_unguiculatus<p><p>paramormyrops_kingsleyae<p><p>jaculus_jaculus<p><p>dipodomys_ordii<p><p>cercocebus_atys<p><p>oreochromis_niloticus<p><p>pongo_abelii<p><p>chrysemys_picta_bellii<p><p>maylandia_zebra<p><p>equus_caballus<p><p>mesocricetus_auratus<p><p>pteropus_vampyrus<p><p>seriola_lalandi_dorsalis<p><p>cyanistes_caeruleus<p><p>mus_musculus_pwkphj<p><p>gadus_morhua<p><p>haplochromis_burtoni<p><p>saccharomyces_cerevisiae<p><p>cynoglossus_semilaevis<p><p>canis_familiaris<p><p>monopterus_albus<p><p>ailuropoda_melanoleuca<p><p>castor_canadensis<p><p>melopsittacus_undulatus<p><p>peromyscus_maniculatus_bairdii<p><p>ficedula_albicollis<p><p>bos_mutus<p><p>mus_musculus_balbcj<p><p>mus_musculus_casteij<p><p>rattus_norvegicus<p><p>otolemur_garnettii<p><p>heterocephalus_glaber_male<p><p>caenorhabditis_elegans<p><p>poecilia_reticulata<p><p>oryzias_latipes_hsok<p><p>tetraodon_nigroviridis<p><p>nothoprocta_perdicaria<p><p>tupaia_belangeri<p><p>mus_musculus_c3hhej<p><p>poecilia_mexicana<p><p>oryzias_latipes<p><p>procavia_capensis<p><p>mus_musculus_akrj<p>
 
-b)Endpoint: "/listSpecies?limit=5" #Remember use 5
+b)Endpoint: "/listSpecies?limit=5"
 
 Response:
-
-
-c)Endpoint: "/listSpecies?limit=950" #Error
-
-Response:
-
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>LIST OF SPECIESÂ´PAGE</title>
+</head>
+<body style="background-color: lightcyan;">
+<h1>This is the list of species</h1>
+<a href="/">Return to main page</a>
+<br><br>
+</body>
+</html>
+<p>ficedula_albicollis<p><p>castor_canadensis<p><p>ciona_intestinalis<p><p>pogona_vitticeps<p><p>manacus_vitellinus<p>
 
 3)KARYOTYPE
 
@@ -168,3 +175,21 @@ Response:
 <br><br>
 </body>
 </html>Chromosome 6 from homo_sapiens. Its length is: 170805979
+
+5)DIFFERENT ENDPOINT
+
+Endpoint: "/hola"
+
+Response:
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>ERRORÂ´S PAGE</title>
+</head>
+<body style="background-color: red;">
+<h1>This is an error, please try again</h1>
+<a href="/">Return to main page</a>
+<br><br>
+</body>
+</html>
