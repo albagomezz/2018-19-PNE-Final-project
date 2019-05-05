@@ -18,7 +18,7 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
 
         if self.path == '/' or self.path == '/main.html':
             f = open("main.html", "r")
-            contents_main = f.read()
+            cont = f.read()
             f.close()
 
         elif self.path.startswith("/listSpecies"):
@@ -54,34 +54,34 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
             species = s1['species']
 
             f2 = open("listSpecies.html", "r")
-            contents_species = f2.read()
+            cont = f2.read()
             f2.close()
             for i in species:
-                contents_species = contents_species + '<p>' + i['name'] + '<p>'
+                cont = cont + '<p>' + i['name'] + '<p>'
 
             if self.path.startswith("/listSpecies?limit="):
-                msg = self.path.split("=")
+                message = self.path.split("=")
                 number_species = 0
                 f3 = open("listSpecies_limit.html", "r")
-                contents_limit = f3.read()
+                cont = f3.read()
                 f3.close()
 
                 for i in species:
-                    contents_limit = contents_limit + '<p>' + i['name'] + '<p>'
+                    cont = cont + '<p>' + i['name'] + '<p>'
                 number_species = number_species + 1
 
-                if str(number_species) == msg[1]:
+                if str(number_species) == message[1]:
                     print("NOT VALID")
 
         elif self.path.startswith("/karyotype"):
             f4 = open("karyotype_menu.html", "r")
-            contents_karyotype = f4.read()
+            cont = f4.read()
             f4.close()
 
             if self.path.startswith("/karyotype?specie="):
-                msg = self.path.split("=")
+                message = self.path.split("=")
                 HOSTNAME = "rest.ensembl.org"
-                ENDPOINT = "/info/assembly/{}?".format(msg[1])
+                ENDPOINT = "/info/assembly/{}?".format(message[1])
                 METHOD = "GET"
 
                 # Connect to the server
@@ -110,21 +110,21 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
                 s2 = json.loads(text_json)
                 karyotype = s2['species']
                 f5 = open("karyotype.html", "r")
-                result_karyotype = f5.read()
+                cont = f5.read()
                 f5.close()
 
                 for i in karyotype:
-                    result_karyotype = result_karyotype + i + " "
+                    cont = cont + i + " "
 
         elif self.path.startswith("/chromosomeLength"):
             f6 = open ("chromo_menu.html", "r")
-            contents_chromo = f6.read()
+            cont = f6.read()
             f6.close()
 
             if self.path.startswith('/chromosomeLength?specie='):
-                msg = self.path.split("=")
+                message = self.path.split("=")
                 list1 = []
-                for i in msg:
+                for i in message:
                     list1 = list1 + i.split("&")
 
                 HOSTNAME = "rest.ensembl.org"
@@ -161,14 +161,49 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
                         length = i['length']
 
                     f7 = open("chromo.html", "r")
-                    result_chromo = f7.read()
+                    cont = f7.read()
                     f7.close()
+                cont = cont + "Chromosome " + name + " from " + list1[1] + " .Its length is: " + str(length)
 
-                f5 = open("karyotype.html", "r")
-                result_karyotype = f5.read()
-                f5.close()
-                result_karyotype = result_karyotype + "Chromosome " + name + " from " + list1[1] + " .Its length is: " + str(length)
+        else:
+            f7 = open('error.html', 'r')
+            cont = f7.read()
+            f7.close()
 
+        self.send_response(200)  # -- Status line: OK!
+
+        # Define the content-type header:
+        self.send_header("Content-Type", "text/html\r\n")
+
+        # The header is finished
+        self.end_headers()
+
+        # Send the response message
+        self.wfile.write(str.encode(cont))
+
+        return
+
+# ------------------------
+# - Server MAIN program
+# ------------------------
+# -- Set the new handler
+Handler = TestHandler
+
+# -- Open the socket server
+with socketserver.TCPServer(("", PORT), Handler) as httpd:
+    print("Serving at PORT", PORT)
+
+    # -- Main loop: Attend the client. Whenever there is a new
+    # -- clint, the handler is called
+    try:
+        httpd.serve_forever()
+    except KeyboardInterrupt:
+        print("")
+        print("Stopped by the user")
+        httpd.server_close()
+
+print("")
+print("Server Stopped")
 
 
 
