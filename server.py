@@ -16,7 +16,7 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
         termcolor.cprint(self.command, 'yellow')
         termcolor.cprint(self.path, 'red')
 
-        if self.path == '/' or self.path == '/main.html':
+        if self.path == "/" or self.path == "/main.html":
             f = open("main.html", "r")
             cont = f.read()
             f.close()
@@ -158,10 +158,10 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
 
                 # Generate the object from the json file
                 s3 = json.loads(text_json)
-                for i in s3['top_level_region']:
+                loaded = s3['top_level_region']
+                for i in loaded:
                     if chromosome == i['name']:
                         length = i['length']
-
                     f7 = open("chromo.html", "r")
                     cont = f7.read()
                     f7.close()
