@@ -1,23 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Main page</title>
-  </head>
-  <body>
-    <form action="myserver" method="get">
-        Choose operation:
-      <select name="operation">
-        <option value="listSpecies">List of all species</option>
-          How many species do you want to show as a maximum?:  <input type="text" name="max">
-        <option value="karyotype">Karyotype of a specie</option>
-          <option value="chromosomeLength">Length of the chromosome of a specie</option>
-      <br><br>
-      Options: <br>
-      </select>
-       <br>
-        <input type="submit"/>
-    </form>
-
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MAIN PAGE</title>
+</head>
+<body>
+    <h1>From here you can choose an operation:</h1>
+    <a href="listSpecies">1) Show list of species</a><br>
+    <a href="karyotype"> 2) Show the karyotype of a specie</a><br>
+    <a href="chromosomeLength"> 3) Show the length of a chromosome</a><br>
+</body>
 </html>
