@@ -423,6 +423,58 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
             cont = f14.read()
             f14.close()
 
+            if self.path.startswith("/geneList?chromo="):
+                message = self.path.split("&")
+                msg1 = message[0].split("=")
+                msg2 = message[1].split("=")
+                msg3 = message[2].split("=")
+                chromo = msg1[1]
+                start = msg2[1]
+                end = msg3[1]
+
+                HOSTNAME = "rest.ensembl.org"
+                ENDPOINT = "/overlap/region/human/"
+                ENDPOINT2 = ":"
+                ENDPOINT3 = "-"
+                ENDPOINT4 = "?content-type=application/json;feature=gene;feature=transcript;feature=cds;feature=exon"
+                METHOD = "GET"
+
+                # Connect to the server
+                conn = http.client.HTTPSConnection(HOSTNAME)
+
+                headers = {'User-Agent': 'http-client'}
+
+                # Send the request. No body (None)
+                # Use the defined headers
+                conn.request(METHOD, ENDPOINT + chromo + ENDPOINT2 + start + ENDPOINT3 + end + ENDPOINT4, None, headers)
+
+                # Wait for the server's response
+                r8 = conn.getresponse()
+
+                # Print the status
+                print()
+                print("Response received: ", end='')
+                print(r8.status, r8.reason)
+
+                # Read the response's body and close
+                # the connection
+                text_json = r8.read().decode("utf-8")
+                conn.close()
+
+                # Generate the object from the json file
+                s8 = json.loads(text_json)
+
+                f15 = open("list_gen.html", "r")
+                cont = f15.read()
+                f15.close()
+                for i in s8:
+                    group = i['feature_type']
+                    for i in group:
+                        genes = i['external_name']
+
+                cont = cont + "<p>The genes located in the chromosome " + chromo + " from the start " + start + " to the end " + end + " are: " + genes + "<p>"
+
+
         else:
             f8 = open('error.html', 'r')
             cont = f8.read()
