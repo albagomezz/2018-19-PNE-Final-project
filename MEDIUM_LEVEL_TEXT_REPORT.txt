@@ -6,7 +6,7 @@ ENDPOINTS TESTED:
 
 1)MAIN PAGE
 
-Endpoint: "/" , "/main.html" , " "
+Endpoint: "http://localhost:8000/" , "http://localhost:8000/main.html" , "http://localhost:8000"
 
 Response:
 <!DOCTYPE html>
@@ -29,7 +29,7 @@ Response:
 
 2) HUMAN GENE SEQUENCE
 
-a) Endpoint: "/geneSeq"
+a) Endpoint: "http://localhost:8000/geneSeq"
 
 Response:
 <!DOCTYPE html>
@@ -52,7 +52,7 @@ Response:
 </body>
 </html>
 
-b) Endpoint: "/geneSeq?gene=FRAT1"
+b) Endpoint: "http://localhost:8000/geneSeq?gene=FRAT1"
 
 Response:
 <!DOCTYPE html>
@@ -70,7 +70,7 @@ Response:
 
 3) HUMAN GENE INFORMATION
 
-a) Endpoint: "/geneInfo"
+a) Endpoint: "http://localhost:8000/geneInfo"
 
 Response:
 <!DOCTYPE html>
@@ -93,7 +93,7 @@ Response:
 </body>
 </html>
 
-b) Endpoint: "/geneInfo?gene=BRCA2"
+b) Endpoint: "http://localhost:8000/geneInfo?gene=BRCA2"
 
 Response:
 <!DOCTYPE html>
@@ -109,7 +109,7 @@ Response:
 </body>
 </html><p>You have chosen BRCA2 and the start is: 32384660</p><p>The end is: 32386108</p><p>The length is: 1449</p><p>The id is: ENSG00000215515</p><p>The chromosome is: 13</p>
 
-C) Endpoint: "/geneInfo?gene=FRAT2"
+C) Endpoint: "http://localhost:8000/geneInfo?gene=FRAT2"
 
 Response:
 <!DOCTYPE html>
@@ -127,7 +127,7 @@ Response:
 
 4) HUMAN GENE CALCULATIONS
 
-a) Endpoint: "/geneCalc"
+a) Endpoint: "http://localhost:8000/geneCalc"
 
 Response:
 
@@ -151,7 +151,7 @@ Response:
 </body>
 </html>
 
-b) Endpoint: "/geneCalc?gene=FRAT1"
+b) Endpoint: "http://localhost:8000/geneCalc?gene=FRAT1"
 
 Response:
 <!DOCTYPE html>
@@ -167,7 +167,7 @@ Response:
 </body>
 </html><p>You have chosen FRAT1</p><p>The percentage of A is: 18.0 %, and the length: 478<p><p>The percentage of C is: 30.2 %, and the length: 800</p><p>The percentage of G is: 32.0 %, and the length: 849<p><p>The percentage of T is: 19.7 %, and the length: 522</p>
 
-c) Endpoint: "/geneCalc?gene=BRCA2"
+c) Endpoint: "http://localhost:8000/geneCalc?gene=BRCA2"
 
 Response:
 <!DOCTYPE html>
@@ -185,7 +185,7 @@ Response:
 
 5) LIST OF NAMES OF THE GENES
 
-a) Endpoint: "/geneList"
+a) Endpoint: "http://localhost:8000/geneList"
 
 Response:
 
@@ -211,7 +211,7 @@ Response:
 </body>
 </html>
 
-b) Endpoint: "/geneList?chromo=4&start=60000&end=200000"
+b) Endpoint: "http://localhost:8000/geneList?chromo=4&start=60000&end=200000"
 
 Response:
 <!DOCTYPE html>
@@ -227,7 +227,7 @@ Response:
 </body>
 </html><p>The genes located in the chromosome 4 from the start 60000 to the end 200000 are: <p>ZNF595<p>AC253576.1<p>ZNF718<p>AC253576.2<p>
 
-c) Endpoint: "/geneList?chromo=1&start=0&end=30000"
+c) Endpoint: "http://localhost:8000/geneList?chromo=1&start=0&end=30000"
 
 Response:
 <!DOCTYPE html>
@@ -245,7 +245,7 @@ Response:
 
 6)DIFFERENT ENDPOINT
 
-Endpoint: "/hola"
+Endpoint: "http://localhost:8000/hola"
 
 Response:
 <!DOCTYPE html>
