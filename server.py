@@ -245,7 +245,7 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
                 f9 = open("seq.html", "r")
                 cont = f9.read()
                 f9.close()
-                cont = cont + "You have chosen " + gene + " and the sequence is: " + data
+                cont = cont + "<p>You have chosen " + gene + " and the sequence is: " + data + "</p>"
 
         elif self.path.startswith("/geneInfo"):
             f10 = open("info_menu.html", "r")
@@ -326,8 +326,8 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
                 f11 = open("info.html", "r")
                 cont = f11.read()
                 f11.close()
-                cont = cont + "<p>You have chosen " + gene + " and the start is: " + str(start) + "<p>" + "<p>The end is: " + str(end) + "<p>" + "<p>The length is: " + str(length) + "<p>"
-                cont = cont + "<p>The id is: " + str(id) + "<p>" + "<p>The chromosome is: " + str(chrom) + "<p>"
+                cont = cont + "<p>You have chosen " + gene + " and the start is: " + str(start) + "</p>" + "<p>The end is: " + str(end) + "</p>" + "<p>The length is: " + str(length) + "</p>"
+                cont = cont + "<p>The id is: " + str(id) + "</p>" + "<p>The chromosome is: " + str(chrom) + "</p>"
 
         elif self.path.startswith("/geneCalc"):
             f12 = open("calc_menu.html", "r")
@@ -414,9 +414,9 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
                 num_t = data.count("T")
                 perc_t = round(100.0 * num_t / length, 1)
 
-                cont = cont + "<p>You have chosen " + gene + "<p>"
-                cont = cont + "<p>The percentage of A is: " + str(perc_a) + " %, and the length: " + str(num_a) + "<p>" + "<p>The percentage of C is: " + str(perc_c) + " %, and the length: " + str(num_c) + "<p>"
-                cont = cont + "<p>The percentage of G is: " + str(perc_g) + " %, and the length: " + str(num_g) + "<p>" + "<p>The percentage of T is: " + str(perc_t) + " %, and the length: " + str(num_t) + "<p>"
+                cont = cont + "<p>You have chosen " + gene + "</p>"
+                cont = cont + "<p>The percentage of A is: " + str(perc_a) + " %, and the length: " + str(num_a) + "<p>" + "<p>The percentage of C is: " + str(perc_c) + " %, and the length: " + str(num_c) + "</p>"
+                cont = cont + "<p>The percentage of G is: " + str(perc_g) + " %, and the length: " + str(num_g) + "<p>" + "<p>The percentage of T is: " + str(perc_t) + " %, and the length: " + str(num_t) + "</p>"
 
         elif self.path.startswith("/geneList"):
             f14 = open("list_gen_menu.html", "r")

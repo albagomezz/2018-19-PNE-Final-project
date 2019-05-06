@@ -3,11 +3,260 @@ FINAL PROJECT: Browsing human and vertebrates genome
 Medium level
 
 ENDPOINTS TESTED:
+
 1)MAIN PAGE
+
 Endpoint: "/" , "/main.html" , " "
 
 Response:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MAIN PAGE</title>
+</head>
+<body style="background-color: khaki;">
+    <h1>Choose one of these operations:</h1>
+    <a href="listSpecies">1) Show list of species</a><br>
+    <a href="karyotype"> 2) Show the karyotype of a specie</a><br>
+    <a href="chromosomeLength"> 3) Show the length of a chromosome</a><br>
+    <a href="geneSeq"> 4) Show the sequence of an human gene</a><br>
+    <a href="geneInfo"> 5) Show information about an human gene</a><br>
+    <a href="geneCalc"> 6) Show calculations about an human gene</a><br>
+    <a href="geneList"> 7) Show list of genes in a chromosome</a><br>
+</body>
+</html>
 
+2) HUMAN GENE SEQUENCE
 
+a) Endpoint: "/geneSeq"
 
+Response:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SEQUENCE OF HUMAN GENEÂ´S PAGE</title>
+</head>
+<body style="background-color: lightgrey;">
+<h1>Here you can get information about the sequence of an human gene</h1>
+<form action="geneSeq" method="get">
+    Type an human gene: <input type="text" name="gene">
+    <br>
+    <input type="submit" value="SEND">
+    <br><br>
+    <br><br>
+</form>
+<p></p>
+<a href="/">Return to main page</a>
+</body>
+</html>
 
+b) Endpoint: "/geneSeq?gene=FRAT1"
+
+Response:
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>SEQUENCE OF HUMAN GENEÂ´S PAGE</title>
+</head>
+<body style="background-color: lightgrey;">
+<h1>This is the sequence of the human gene</h1>
+<a href="/">Return to main page</a>
+<br><br>
+</body>
+</html><p>You have chosen FRAT1 and the sequence is: ATTCCGGCTCCCGCGGCTGCAGGCGCGCGGCTAGAGTGCCTGGCGGGCTCCGGCTTCCGCGTCCGCCCCGGCCCCGGTCCAGACTTAGTCTTCAGCTCCGCGCCCGCTCCGCCGCGGCCCACCGCGCCCGCCGGCAGCCGAGCCCCCAGCGACGCCCGCACAGCTCCGGGTGCCCAGACAGGGGGCCATGCCGTGCCGGAGGGAGGAGGAAGAGGAAGCCGGCGAGGAGGCGGAGGGGGAGGAAGAGGAGGAGGACAGCTTCCTCCTACTGCAGCAGTCAGTGGCGCTGGGCAGCTCGGGCGAGGTGGACCGGCTGGTGGCCCAGATCGGCGAGACGCTGCAGCTGGACGCGGCGCAGCACAGCCCGGCCTCGCCGTGCGGGCCCCCGGGGGCGCCGCTGCGGGCCCCGGGGCCCCTGGCTGCGGCGGTGCCGGCGGACAAGGCCAGGTCCCCGGCGGTGCCGCTGCTGCTGCCGCCCGCGTTGGCGGAGACTGTGGGCCCGGCGCCCCCTGGGGTCCTGCGCTGCGCCCTGGGGGACCGCGGCCGCGTGCGGGGCCGCGCTGCGCCCTACTGCGTGGCCGAGCTCGCCACAGGCCCCAGCGCGCTGTCCCCACTGCCCCCTCAGGCCGACCTTGATGGGCCTCCGGGAGCTGGCAAGCAGGGCATCCCGCAGCCGCTGTCGGGTCCGTGCCGGCGAGGATGGCTCCGGGGCGCCGCCGCCTCCCGCCGCCTGCAGCAGCGACGCGGGTCCCAACCAGAAACCCGCACAGGCGACGACGACCCGCACCGGCTTCTGCAGCAGCTAGTGCTCTCTGGAAACCTCATCAAGGAGGCCGTGCGAAGGCTTCATTCGCGACGGCTGCAGTTACGTGCAAAGCTTCCCCAACGCCCGCTCCTGGGACCTCTGTCGGCCCCGGTGCATGAACCCCCTTCGCCTCGCAGCCCTCGCGCGGCCTGCAGTGACCCTGGCGCCTCCGGGAGGGCGCAGCTCAGAACTGGCGACGGCGTTCTTGTGCCTGGCAGCTAACACGCCCGGGGTGGCCACAGCGCCAGCCTCAGACTGGAGGGCAAGGGGTTCCCTTGAGGGCTGCAGTTCTACTCAGGCTGGTGGAGAACTCTGGCTTTTGGAAGCGAGAGTAAAAAGCTAATGACGAGGAACCGAAAAATCGCGAGTGTTTCGCGGGTAACTGGGGTTGAGGGCCAAAATATTTGGAATGAAGGACTTTGGCCCTATTTAAGGCAGATTTTACAGAGCGCACCTCAAACGTACAAGTCAGTAGGACTCCTTATTTGGCGTGACCCGACCTGGCCGCGGAGCCTGCATTTCCTCGCAGCCTCTCAGTGCCCTCCAGCCCCGCGACCATGTGGCCACAATCCACGCTTCTCCGGATCGCGGTGCGCCGGAACCACGGAGGATGATGCCAGTTACTTGCTTTACCTTTTCAGGGCTGGCTCCTGATCCACTTTGGGGGAGGAGAACATGAGTAGATAATTTCAGGGTGCAGCCCAATCTGCCAGACTTAAAAAAACCATCTTGTGTCTTTGGAGGTGCTGCTTAATACCAAACATGCGGTGCCATGAAGGGACCCTTTGGGGGTTGAATAGGAGTTAACCCCTGCGCTCTCTTTGCAACTGTCTCTCTTCTCAGAGTGGTGGGGGAAGGCTGTACGACACGGGTGGGGAAAGGAGGTGGGGGCGGGGAGTATTGAATGGTGGTGGAAGGGTAGAGAGGCGCGGAGTGAACCCCACGCCCTGTCTAAAGTGTATTTTCAGAGCCGGCCCGCCTCTCCTCGGTTCAAGGTCACTGTTTCCTGGGCACGCACTGGGTTGCGGGACAGAGTAGCCAGGTTCTGCCGGTGCTCGGAGAAGAGCGCAGTGTTTTGCAAGTGCTGGAGTCTCCTGAGGACACGCGCGTCGCCGCCACCGCGGGTGTGGGAAAGCGCGGACGTGCTGGGCGGCTGTGCTTCGGTAGGCGACCACCGCCCCTGGCCGCGCTCCGGGCTTTCACGGAAACTCCCGAGACCGGGCCCTGGGTTCCTCCTCTCCTACTCGGCTCTGCAGTCCTACTCAAGCGGGTGGCTCTGGGATCCTGGGGGCCTGGGTTGGGGGCTAGGGAGACGCCATGTGATGGACACTCCAGGGACACACAGCCTAGCACAGCAGCTTATAATGGGCTCTCCGGGGCCATTTGCAATAACAGCTGCAATTCCCTGGATAGACGAGTTGATTTCCTCCCTCTGCCCCTCCCCCAGCCATGCCAGCTGGCCTTTGTAAGTGCAGGAAACCGAGTAGAAAATGTGACCCTCCAAATGGAGAAGCTGCAGGCTTTGCCATTGTGAACCATGGTGAAGTGCTTGGAACATACTGTTCACTCACTCTAAAGGCGCTGAGACTGTGCTGTTGTTCTCGTTTTTATAGTCAATGGCTTGTTCATCATCCAGATGTGGCTACTGACATATCTACACTTCGCACCGGAGTGTCTGGAATTGTGGCTATCCTGATTATAGGATTTTAACTTAACTGAAATGCCTGCTTTGAATAAATGTGTTGGGTTTTTTGTTTGGTTTTATTTTATACTTGCCATCAGTGAAAAAGATGTACAGAACACATTTCTCTGATCTCCATAAACATGAAAACACTTGAAATCTC</p>
+
+3) HUMAN GENE INFORMATION
+
+a) Endpoint: "/geneInfo"
+
+Response:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>INFORMATION OF HUMAN GENEÂ´S PAGE</title>
+</head>
+<body style="background-color: thistle;">
+<h1>Here you can get information about an human gene: start, end, Length, id and Chromosome</h1>
+<form action="geneInfo" method="get">
+    Type an human gene: <input type="text" name="gene">
+    <br>
+    <input type="submit" value="SEND">
+    <br><br>
+    <br><br>
+</form>
+<p></p>
+<a href="/">Return to main page</a>
+</body>
+</html>
+
+b) Endpoint: "/geneInfo?gene=BRCA2"
+
+Response:
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>SEQUENCE OF HUMAN GENEÂ´S PAGE</title>
+</head>
+<body style="background-color: thistle;">
+<h1>This is the information of the human gene</h1>
+<a href="/">Return to main page</a>
+<br><br>
+</body>
+</html><p>You have chosen BRCA2 and the start is: 32384660</p><p>The end is: 32386108</p><p>The length is: 1449</p><p>The id is: ENSG00000215515</p><p>The chromosome is: 13</p>
+
+C) Endpoint: "/geneInfo?gene=FRAT2"
+
+Response:
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>SEQUENCE OF HUMAN GENEÂ´S PAGE</title>
+</head>
+<body style="background-color: thistle;">
+<h1>This is the information of the human gene</h1>
+<a href="/">Return to main page</a>
+<br><br>
+</body>
+</html><p>You have chosen FRAT2 and the start is: 97334564</p><p>The end is: 97343203</p><p>The length is: 8640</p><p>The id is: ENSG00000225850</p><p>The chromosome is: 10</p>
+
+4) HUMAN GENE CALCULATIONS
+
+a) Endpoint: "/geneCalc"
+
+Response:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CALCULATIONS ON HUMAN GENEÂ´S PAGE</title>
+</head>
+<body style="background-color: paleturquoise;">
+<h1>Here you get the result of some calculations on an human gene: Length and Percentage of its bases</h1>
+<form action="geneCalc" method="get">
+    Type an human gene: <input type="text" name="gene">
+    <br>
+    <input type="submit" value="SEND">
+    <br><br>
+    <br><br>
+</form>
+<p></p>
+<a href="/">Return to main page</a>
+</body>
+</html>
+
+b) Endpoint: "/geneCalc?gene=FRAT1"
+
+Response:
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>SEQUENCE OF HUMAN GENEÂ´S PAGE</title>
+</head>
+<body style="background-color: paleturquoise;">
+<h1>These are the calculations on the human gene</h1>
+<a href="/">Return to main page</a>
+<br><br>
+</body>
+</html><p>You have chosen FRAT1</p><p>The percentage of A is: 18.0 %, and the length: 478<p><p>The percentage of C is: 30.2 %, and the length: 800</p><p>The percentage of G is: 32.0 %, and the length: 849<p><p>The percentage of T is: 19.7 %, and the length: 522</p>
+
+c) Endpoint: "/geneCalc?gene=BRCA2"
+
+Response:
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>SEQUENCE OF HUMAN GENEÂ´S PAGE</title>
+</head>
+<body style="background-color: paleturquoise;">
+<h1>These are the calculations on the human gene</h1>
+<a href="/">Return to main page</a>
+<br><br>
+</body>
+</html><p>You have chosen BRCA2</p><p>The percentage of A is: 30.5 %, and the length: 25879<p><p>The percentage of C is: 18.2 %, and the length: 15455</p><p>The percentage of G is: 19.9 %, and the length: 16863<p><p>The percentage of T is: 31.4 %, and the length: 26596</p>
+
+5) LIST OF NAMES OF THE GENES
+
+a) Endpoint: "/geneList"
+
+Response:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NAMES OF THE GENES IN A CHROMOSOME PAGE</title>
+</head>
+<body style="background-color: lightsalmon;">
+<h1>Here you can get information about the names of the genes in a chromosome</h1>
+<form action="geneList" method="get">
+    Type a chromosome: <input type="text" name="chromo">
+    Type a start: <input type="text" name="start">
+    Type an end: <input type="text" name="end">
+    <br>
+    <input type="submit" value="SEND">
+    <br><br>
+    <br><br>
+</form>
+<p></p>
+<a href="/">Return to main page</a>
+</body>
+</html>
+
+b) Endpoint: "/geneList?chromo=4&start=60000&end=200000"
+
+Response:
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>NAMES OF THE GENES IN A CHROMOSOME PAGE</title>
+</head>
+<body style="background-color: lightsalmon;">
+<h1>These are the genes in the chromosome</h1>
+<a href="/">Return to main page</a>
+<br><br>
+</body>
+</html><p>The genes located in the chromosome 4 from the start 60000 to the end 200000 are: <p>ZNF595<p>AC253576.1<p>ZNF718<p>AC253576.2<p>
+
+c) Endpoint: "/geneList?chromo=1&start=0&end=30000"
+
+Response:
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>NAMES OF THE GENES IN A CHROMOSOME PAGE</title>
+</head>
+<body style="background-color: lightsalmon;">
+<h1>These are the genes in the chromosome</h1>
+<a href="/">Return to main page</a>
+<br><br>
+</body>
+</html><p>The genes located in the chromosome 1 from the start 0 to the end 30000 are: <p>DDX11L1<p>WASH7P<p>MIR6859-1<p>MIR1302-2HG<p>
+
+6)DIFFERENT ENDPOINT
+
+Endpoint: "/hola"
+
+Response:
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>ERRORÂ´S PAGE</title>
+</head>
+<body style="background-color: red;">
+<h1>This is an error, please try again</h1>
+<a href="/">Return to main page</a>
+<br><br>
+</body>
+</html>
