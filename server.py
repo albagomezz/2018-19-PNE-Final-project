@@ -22,6 +22,11 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
             f.close()
 
         elif self.path.startswith("/listSpecies"):
+
+            f2 = open("list_menu.html", "r")
+            cont = f2.read()
+            f2.close()
+
             HOSTNAME = "rest.ensembl.org"
             ENDPOINT = "/info/species?content-type=application/json"
             METHOD = "GET"
@@ -53,11 +58,10 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
 
             species = s1['species']
 
-            f2 = open("list_menu.html", "r")
-            cont = f2.read()
-            f2.close()
+
             for i in species:
-                cont = cont + '<p>' + i['name'] + '<p>'
+                name = i['name']
+                cont = cont + name + " , "
 
             if self.path.startswith("/listSpecies?limit="):
 
@@ -68,13 +72,13 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
                 message = self.path.split("=")
                 msg = message[1]
                 msg = int(msg)
-                sp = []
+                list0 = []
                 for i in species:
                     name = i['name']
-                    sp.append(name)
-                lim = sp[:msg]
+                    list0.append(name)
+                lim = list0[:msg]
                 for i in lim:
-                    cont = cont + '<p>' + i + '<p>'
+                    cont = cont + i + " , "
 
         elif self.path.startswith("/karyotype"):
             f4 = open("karyotype_menu.html", "r")
@@ -169,7 +173,7 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
                     f7 = open("chromo.html", "r")
                     cont = f7.read()
                     f7.close()
-                cont = cont + "Chromosome " + chromosome + " from " + specie + ". Its length is: " + str(length)
+                cont = cont + "<p>Chromosome " + chromosome + " from " + specie + ". Its length is: " + str(length) + "</p>"
 
         elif self.path.startswith('/geneSeq'):
             f8 = open("seq_menu.html", "r")
