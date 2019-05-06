@@ -249,6 +249,10 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
 
         elif self.path.startswith("/geneInfo"):
 
+        elif self.path.startswith("/geneCalc"):
+
+        elif self.path.startswith("/geneList"):
+
         else:
             f8 = open('error.html', 'r')
             cont = f8.read()
