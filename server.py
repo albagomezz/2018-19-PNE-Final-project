@@ -436,7 +436,7 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
                 ENDPOINT = "/overlap/region/human/"
                 ENDPOINT2 = ":"
                 ENDPOINT3 = "-"
-                ENDPOINT4 = "?content-type=application/json;feature=gene;feature=transcript;feature=cds;feature=exon"
+                ENDPOINT4 = "?content-type=application/json;feature=gene"
                 METHOD = "GET"
 
                 # Connect to the server
@@ -463,16 +463,20 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
 
                 # Generate the object from the json file
                 s8 = json.loads(text_json)
+                print(s8)
 
                 f15 = open("list_gen.html", "r")
                 cont = f15.read()
                 f15.close()
-                for i in s8:
-                    group = i['feature_type']
-                    for i in group:
-                        genes = i['external_name']
 
-                cont = cont + "<p>The genes located in the chromosome " + chromo + " from the start " + start + " to the end " + end + " are: " + genes + "<p>"
+                cont = cont + "<p>The genes located in the chromosome " + chromo + " from the start " + start + " to the end " + end + " are: <p>"
+
+                for i in s8:
+                    gene = i['external_name']
+                    cont = cont + gene + "<p>"
+
+
+                #cont = cont + "<p>The genes located in the chromosome " + chromo + " from the start " + start + " to the end " + end + " are: " + gene + "<p>"
 
 
         else:
