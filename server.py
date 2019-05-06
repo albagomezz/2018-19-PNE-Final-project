@@ -475,10 +475,6 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
                     gene = i['external_name']
                     cont = cont + gene + "<p>"
 
-
-                #cont = cont + "<p>The genes located in the chromosome " + chromo + " from the start " + start + " to the end " + end + " are: " + gene + "<p>"
-
-
         else:
             f8 = open('error.html', 'r')
             cont = f8.read()
