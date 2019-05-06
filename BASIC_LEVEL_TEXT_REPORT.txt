@@ -4,7 +4,7 @@ Basic level
 
 ENDPOINTS TESTED:
 1)MAIN PAGE
-Endpoint: "/" , "/main.html" , " "
+Endpoint: "http://localhost:8000/" , "http://localhost:8000/main.html" , "http://localhost:8000"
 
 Response:
 <!DOCTYPE html>
@@ -23,7 +23,7 @@ Response:
 
 2)LIST OF SPECIES
 
-a)Endpoint: "/listSpecies"
+a)Endpoint: "http://localhost:8000/listSpecies"
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,7 +42,7 @@ a)Endpoint: "/listSpecies"
     <a href="/">Return to main page</a>
 </form>mus_musculus , homo_sapiens , cavia_porcellus , mus_musculus_cbaj , amphilophus_citrinellus , anolis_carolinensis , cebus_capucinus , labrus_bergylta , panthera_pardus , takifugu_rubripes , rhinopithecus_bieti , mastacembelus_armatus , lepidothrix_coronata , fukomys_damarensis , monodelphis_domestica , equus_asinus_asinus , xiphophorus_maculatus , apteryx_owenii , calidris_pugnax , gasterosteus_aculeatus , cricetulus_griseus_picr , mus_spicilegus , oryzias_melastigma , nannospalax_galili , chelonoidis_abingdonii , acanthochromis_polyacanthus , scleropages_formosus , sarcophilus_harrisii , gallus_gallus , latimeria_chalumnae , numida_meleagris , mus_musculus_aj , poecilia_latipinna , phascolarctos_cinereus , mus_musculus_fvbnj , cricetulus_griseus_chok1gshd , mus_musculus_lpj , heterocephalus_glaber_female , calidris_pygmaea , anas_platyrhynchos_platyrhynchos , saimiri_boliviensis_boliviensis , lonchura_striata_domestica , callithrix_jacchus , ovis_aries , papio_anubis , macaca_fascicularis , notechis_scutatus , capra_hircus , fundulus_heteroclitus , ursus_americanus , mus_musculus_nzohlltj , notamacropus_eugenii , tursiops_truncatus , gambusia_affinis , felis_catus , pan_paniscus , nomascus_leucogenys , chlorocebus_sabaeus , bos_taurus , amphiprion_ocellaris , mus_pahari , coturnix_japonica , carlito_syrichta , apteryx_haastii , macaca_nemestrina , sphenodon_punctatus , anser_brachyrhynchus , anabas_testudineus , lepisosteus_oculatus , rhinopithecus_roxellana , spermophilus_dauricus , poecilia_formosa , scophthalmus_maximus , mus_spretus , petromyzon_marinus , xenopus_tropicalis , gopherus_agassizii , bison_bison_bison , mus_musculus_129s1svimj , ictalurus_punctatus , octodon_degus , colobus_angolensis_palliatus , manacus_vitellinus , astatotilapia_calliptera , prolemur_simus , mus_musculus_wsbeij , dasypus_novemcinctus , kryptolebias_marmoratus , mus_musculus_dba2j , urocitellus_parryii , gorilla_gorilla , microcebus_murinus , mandrillus_leucophaeus , pogona_vitticeps , neovison_vison , parus_major , macaca_mulatta , ornithorhynchus_anatinus , oryzias_latipes_hni , eptatretus_burgeri , canis_lupus_dingo , danio_rerio , mus_musculus_nodshiltj , stegastes_partitus , chinchilla_lanigera , mus_musculus_c57bl6nj , astyanax_mexicanus , ictidomys_tridecemlineatus , vicugna_pacos , crocodylus_porosus , zonotrichia_albicollis , amphiprion_percula , panthera_tigris_altaica , meleagris_gallopavo , piliocolobus_tephrosceles , marmota_marmota_marmota , serinus_canaria , apteryx_rowi , salvator_merianae , choloepus_hoffmanni , mus_caroli , sorex_araneus , taeniopygia_guttata , theropithecus_gelada , hippocampus_comes , cavia_aperea , periophthalmus_magnuspinnatus , aotus_nancymaae , myotis_lucifugus , sus_scrofa , propithecus_coquereli , drosophila_melanogaster , pundamilia_nyererei , echinops_telfairi , junco_hyemalis , vulpes_vulpes , pan_troglodytes , cricetulus_griseus_crigri , seriola_dumerili , erinaceus_europaeus , loxodonta_africana , neolamprologus_brichardi , pelodiscus_sinensis , microtus_ochrogaster , mola_mola , ursus_maritimus , dromaius_novaehollandiae , oryctolagus_cuniculus , xiphophorus_couchianus , cyprinodon_variegatus , ciona_intestinalis , pygocentrus_nattereri , esox_lucius , ochotona_princeps , mustela_putorius_furo , ciona_savignyi , meriones_unguiculatus , paramormyrops_kingsleyae , jaculus_jaculus , dipodomys_ordii , cercocebus_atys , oreochromis_niloticus , pongo_abelii , chrysemys_picta_bellii , maylandia_zebra , equus_caballus , mesocricetus_auratus , pteropus_vampyrus , seriola_lalandi_dorsalis , cyanistes_caeruleus , mus_musculus_pwkphj , gadus_morhua , haplochromis_burtoni , saccharomyces_cerevisiae , cynoglossus_semilaevis , canis_familiaris , monopterus_albus , ailuropoda_melanoleuca , castor_canadensis , melopsittacus_undulatus , peromyscus_maniculatus_bairdii , ficedula_albicollis , bos_mutus , mus_musculus_balbcj , mus_musculus_casteij , rattus_norvegicus , otolemur_garnettii , heterocephalus_glaber_male , caenorhabditis_elegans , poecilia_reticulata , oryzias_latipes_hsok , tetraodon_nigroviridis , nothoprocta_perdicaria , tupaia_belangeri , mus_musculus_c3hhej , poecilia_mexicana , oryzias_latipes , procavia_capensis , mus_musculus_akrj ,
 
-b)Endpoint: "/listSpecies?limit=5"
+b)Endpoint: "http://localhost:8000/listSpecies?limit=5"
 
 Response:
 
@@ -62,7 +62,7 @@ mus_musculus , homo_sapiens , cavia_porcellus , mus_musculus_cbaj , amphilophus_
 
 3)KARYOTYPE
 
-a)Endpoint: "/karyotype"
+a)Endpoint: "http://localhost:8000/karyotype"
 
 Response:
 <!DOCTYPE html>
@@ -85,7 +85,7 @@ Response:
 </body>
 </html>
 
-b)Endpoint: "/karyotype?specie=pig"
+b)Endpoint: "http://localhost:8000/karyotype?specie=pig"
 
 Response:
 <!DOCTYPE html>
@@ -101,7 +101,7 @@ Response:
 </body>
 </html>You have chosen pig: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 X Y MT
 
-c)Endpoint: "/karyotype?specie=homo_sapiens"
+c)Endpoint: "http://localhost:8000/karyotype?specie=homo_sapiens"
 
 Response:
 <!DOCTYPE html>
@@ -119,7 +119,7 @@ Response:
 
 4)CHROMOSOME LENGTH
 
-a)Endpoint: "/chromosomeLength"
+a)Endpoint: "http://localhost:8000/chromosomeLength"
 
 Response:
 <!DOCTYPE html>
@@ -144,7 +144,7 @@ Response:
 </body>
 </html>
 
-b)Endpoint: "/chromosomeLength?specie=mouse&chromo=4"
+b)Endpoint: "http://localhost:8000/chromosomeLength?specie=mouse&chromo=4"
 
 Response:
 
@@ -161,7 +161,7 @@ Response:
 </body>
 </html><p>Chromosome 4 from mouse. Its length is: 156508116</p>
 
-c)Endpoint: "/chromosomeLength?specie=homo_sapiens&chromo=6"
+c)Endpoint: "http://localhost:8000/chromosomeLength?specie=homo_sapiens&chromo=6"
 
 Response:
 
@@ -180,7 +180,7 @@ Response:
 
 5)DIFFERENT ENDPOINT
 
-Endpoint: "/hola"
+Endpoint: "http://localhost:8000/hola"
 
 Response:
 <!DOCTYPE html>
